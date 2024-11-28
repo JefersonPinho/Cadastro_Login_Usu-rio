@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal</title>
+  </head>
+  <body>
+    <h1>Bem-vindo, <span id="username">Usuário</span>!</h1>
+    <p>Esta é a página principal do usuário após o login.</p>
+    <button onclick="logout()">Sair</button>
+
+    <script>
+      // Exibir o nome do usuário (salvo no localStorage durante o login)
+      const username = localStorage.getItem("username");
+      document.getElementById("username").innerText =
+        username || "Usuário Desconhecido";
+
+      // Função de logout
+      function logout() {
+        // Limpar o localStorage e redirecionar para o login
+        localStorage.removeItem("username");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>
